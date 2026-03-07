@@ -90,6 +90,7 @@ class FuelBillData(BillData):
     )
     pump_reading_start: float | None = Field(default=None, ge=0)
     pump_reading_end: float | None = Field(default=None, ge=0)
+    footer_lines: list[str] = Field(default_factory=list, description="Footer messages printed at the bottom of the receipt")
 
     # -----------------------------------------------------------------------
     # Validators
@@ -192,6 +193,9 @@ class FuelBillData(BillData):
 
             # Notes
             "notes": self.notes or "",
+
+            # Footer
+            "footer_lines": self.footer_lines,
         }
 
         # All items (for multi-item support)

@@ -10,7 +10,13 @@ The Bill Generator allows you to generate PDF fuel bills by providing a structur
 
 ### 1. Using Python Scripts
 
-You can use the provided scripts to generate bills. There are two primary ways currently set up in the repository:
+You can use the provided scripts to generate bills. There are three primary ways currently set up in the repository:
+
+**Generate bills from source data (`generate_fuel_bills.py`) [Recommended]**:
+This is the main script used to generate bulk fuel bills based on transaction data. It reads input from `input/fuel/source.json` and uses the robust configuration defined in `input/fuel/config.json` to produce PDF bills properly formatted with accurate vendor details, dynamic fuel rates, and vehicle numbers.
+```bash
+python generate_fuel_bills.py
+```
 
 **Generate a single sample bill (`generate_sample.py`)**:
 This script generates a bill using template ID 1 and outputs some details to the console.
@@ -24,7 +30,17 @@ This script will iterate over all available template IDs (1, 2, 3) and output a 
 python generate_all_templates.py
 ```
 
-### 2. Basic Example
+### 2. Configuration System (`config.json`)
+
+Recent changes have externalized all bill configuration out of the code and into `input/fuel/config.json`. 
+
+Key configuration features include:
+- **`vendor_meta`**: Defines providers (e.g., IndianOil, Bharat Petroleum, HP) to handle multi-provider scenarios. Sets their template ID, density, footer lines, and specific station details (address, GSTIN).
+- **`vehicle_numbers`**: Automatically maps vehicle types (e.g., "Bike", "Car") from the source data to your exact vehicle registration numbers.
+- **`petrol_rates`**: Configures monthly petrol prices. The script looks up the correct rate based on the bill's transaction date to calculate total quantity.
+- **`output`**: Controls the `base_dir` for generated PDFs and includes a `subdir_by_provider` option to optionally sort output files into provider-specific folders.
+
+### 3. Basic Example
 
 Here is a basic example of how to configure the `bill_data` block:
 

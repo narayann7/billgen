@@ -241,14 +241,12 @@ class FuelReceiptRenderer(BillRenderer):
         y -= 6
 
         # -- Footer messages ------------------------------------------------
+        footer_lines = context.get("footer_lines") or []
         c.setFont("Courier", 7)
-        self._draw_centered(c, "SAVE FUEL YAANI SAVE MONEY", y)
-        y -= 10
-        c.setFont("Courier", 7)
-        self._draw_centered(c, "THANKS FOR FUELLING WITH US", y)
-        y -= 10
-        self._draw_centered(c, "VISIT AGAIN", y)
-        y -= 14
+        for line in footer_lines:
+            self._draw_centered(c, line, y)
+            y -= 10
+        y -= 4
 
         # -- GSTIN of vendor ------------------------------------------------
         if context.get("vendor_gstin"):

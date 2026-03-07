@@ -1,0 +1,282 @@
+[
+    {
+        "date": "2025-02-05 17:40:00",
+        "amount": 620,
+        "vehicle_type": "Bike",
+        "provider": "IndianOil",
+        "address": "HAL Old Airport Rd, Kodihalli, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-02-14 09:15:00",
+        "amount": 430,
+        "vehicle_type": "Bike",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "No 1, Wheeler Rd, next to Thomas Bakery, Cleveland Town, Frazer Town, Bengaluru, Karnataka 560042"
+    },
+    {
+        "date": "2025-02-21 14:30:00",
+        "amount": 780,
+        "vehicle_type": "Car",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "HAL Old Airport Rd, Murugeshpalya, Bengaluru, Karnataka 560017"
+    },
+    {
+        "date": "2025-03-03 08:50:00",
+        "amount": 450,
+        "vehicle_type": "Bike",
+        "provider": "IndianOil",
+        "address": "Ground Floor, Trinity Circle, Mahatma Gandhi Rd, Gowthamapuram, Jogupalya, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-03-11 19:20:00",
+        "amount": 870,
+        "vehicle_type": "Bike",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "No 162, Wheeler Rd, Sindhi Colony, Frazer Town, Bengaluru, Karnataka 560005"
+    },
+    {
+        "date": "2025-03-22 11:05:00",
+        "amount": 680,
+        "vehicle_type": "Car",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "Survey No, XJJJ+G9C, 64, Old Madras Rd, near Swami Vivekananda Ashram, Halasuru, Murphy Town, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-04-02 16:45:00",
+        "amount": 540,
+        "vehicle_type": "Bike",
+        "provider": "IndianOil",
+        "address": "C8, Old Madras Rd, Binnamangala, Stage 1, Indiranagar, Bengaluru, Karnataka 560038"
+    },
+    {
+        "date": "2025-04-10 09:30:00",
+        "amount": 920,
+        "vehicle_type": "Bike",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "HAL Old Airport Rd, Murugeshpalya, Bengaluru, Karnataka 560017"
+    },
+    {
+        "date": "2025-04-19 15:10:00",
+        "amount": 740,
+        "vehicle_type": "Bike",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "No 1, Wheeler Rd, next to Thomas Bakery, Cleveland Town, Frazer Town, Bengaluru, Karnataka 560042"
+    },
+    {
+        "date": "2025-04-28 18:00:00",
+        "amount": 860,
+        "vehicle_type": "Car",
+        "provider": "IndianOil",
+        "address": "HAL Old Airport Rd, Kodihalli, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-05-06 08:20:00",
+        "amount": 340,
+        "vehicle_type": "Bike",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "No 162, Wheeler Rd, Sindhi Colony, Frazer Town, Bengaluru, Karnataka 560005"
+    },
+    {
+        "date": "2025-05-15 13:40:00",
+        "amount": 760,
+        "vehicle_type": "Bike",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "Survey No, XJJJ+G9C, 64, Old Madras Rd, near Swami Vivekananda Ashram, Halasuru, Murphy Town, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-05-24 17:55:00",
+        "amount": 590,
+        "vehicle_type": "Car",
+        "provider": "IndianOil",
+        "address": "Ground Floor, Trinity Circle, Mahatma Gandhi Rd, Gowthamapuram, Jogupalya, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-06-04 10:10:00",
+        "amount": 850,
+        "vehicle_type": "Bike",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "HAL Old Airport Rd, Murugeshpalya, Bengaluru, Karnataka 560017"
+    },
+    {
+        "date": "2025-06-12 20:30:00",
+        "amount": 520,
+        "vehicle_type": "Bike",
+        "provider": "IndianOil",
+        "address": "C8, Old Madras Rd, Binnamangala, Stage 1, Indiranagar, Bengaluru, Karnataka 560038"
+    },
+    {
+        "date": "2025-06-20 15:00:00",
+        "amount": 820,
+        "vehicle_type": "Bike",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "No 1, Wheeler Rd, next to Thomas Bakery, Cleveland Town, Frazer Town, Bengaluru, Karnataka 560042"
+    },
+    {
+        "date": "2025-06-28 09:45:00",
+        "amount": 720,
+        "vehicle_type": "Car",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "No 162, Wheeler Rd, Sindhi Colony, Frazer Town, Bengaluru, Karnataka 560005"
+    },
+    {
+        "date": "2025-07-07 17:20:00",
+        "amount": 380,
+        "vehicle_type": "Bike",
+        "provider": "IndianOil",
+        "address": "HAL Old Airport Rd, Kodihalli, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-07-16 11:00:00",
+        "amount": 760,
+        "vehicle_type": "Bike",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "Survey No, XJJJ+G9C, 64, Old Madras Rd, near Swami Vivekananda Ashram, Halasuru, Murphy Town, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-07-25 14:50:00",
+        "amount": 640,
+        "vehicle_type": "Bike",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "HAL Old Airport Rd, Murugeshpalya, Bengaluru, Karnataka 560017"
+    },
+    {
+        "date": "2025-08-04 08:35:00",
+        "amount": 310,
+        "vehicle_type": "Bike",
+        "provider": "IndianOil",
+        "address": "Ground Floor, Trinity Circle, Mahatma Gandhi Rd, Gowthamapuram, Jogupalya, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-08-13 16:15:00",
+        "amount": 750,
+        "vehicle_type": "Car",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "No 1, Wheeler Rd, next to Thomas Bakery, Cleveland Town, Frazer Town, Bengaluru, Karnataka 560042"
+    },
+    {
+        "date": "2025-08-22 12:40:00",
+        "amount": 840,
+        "vehicle_type": "Bike",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "No 162, Wheeler Rd, Sindhi Colony, Frazer Town, Bengaluru, Karnataka 560005"
+    },
+    {
+        "date": "2025-09-02 18:55:00",
+        "amount": 560,
+        "vehicle_type": "Bike",
+        "provider": "IndianOil",
+        "address": "C8, Old Madras Rd, Binnamangala, Stage 1, Indiranagar, Bengaluru, Karnataka 560038"
+    },
+    {
+        "date": "2025-09-11 10:25:00",
+        "amount": 950,
+        "vehicle_type": "Bike",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "Survey No, XJJJ+G9C, 64, Old Madras Rd, near Swami Vivekananda Ashram, Halasuru, Murphy Town, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-09-20 15:30:00",
+        "amount": 810,
+        "vehicle_type": "Car",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "HAL Old Airport Rd, Murugeshpalya, Bengaluru, Karnataka 560017"
+    },
+    {
+        "date": "2025-10-01 09:00:00",
+        "amount": 480,
+        "vehicle_type": "Bike",
+        "provider": "IndianOil",
+        "address": "HAL Old Airport Rd, Kodihalli, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-10-10 19:10:00",
+        "amount": 700,
+        "vehicle_type": "Bike",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "No 1, Wheeler Rd, next to Thomas Bakery, Cleveland Town, Frazer Town, Bengaluru, Karnataka 560042"
+    },
+    {
+        "date": "2025-10-20 13:50:00",
+        "amount": 580,
+        "vehicle_type": "Bike",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "No 162, Wheeler Rd, Sindhi Colony, Frazer Town, Bengaluru, Karnataka 560005"
+    },
+    {
+        "date": "2025-11-02 08:10:00",
+        "amount": 790,
+        "vehicle_type": "Car",
+        "provider": "IndianOil",
+        "address": "Ground Floor, Trinity Circle, Mahatma Gandhi Rd, Gowthamapuram, Jogupalya, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-11-12 17:35:00",
+        "amount": 610,
+        "vehicle_type": "Bike",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "Survey No, XJJJ+G9C, 64, Old Madras Rd, near Swami Vivekananda Ashram, Halasuru, Murphy Town, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2025-11-22 12:00:00",
+        "amount": 860,
+        "vehicle_type": "Bike",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "HAL Old Airport Rd, Murugeshpalya, Bengaluru, Karnataka 560017"
+    },
+    {
+        "date": "2025-12-03 16:20:00",
+        "amount": 520,
+        "vehicle_type": "Bike",
+        "provider": "IndianOil",
+        "address": "C8, Old Madras Rd, Binnamangala, Stage 1, Indiranagar, Bengaluru, Karnataka 560038"
+    },
+    {
+        "date": "2025-12-13 10:45:00",
+        "amount": 740,
+        "vehicle_type": "Bike",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "No 1, Wheeler Rd, next to Thomas Bakery, Cleveland Town, Frazer Town, Bengaluru, Karnataka 560042"
+    },
+    {
+        "date": "2025-12-22 15:55:00",
+        "amount": 380,
+        "vehicle_type": "Car",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "No 162, Wheeler Rd, Sindhi Colony, Frazer Town, Bengaluru, Karnataka 560005"
+    },
+    {
+        "date": "2026-01-06 09:30:00",
+        "amount": 460,
+        "vehicle_type": "Bike",
+        "provider": "IndianOil",
+        "address": "HAL Old Airport Rd, Kodihalli, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2026-01-15 18:00:00",
+        "amount": 830,
+        "vehicle_type": "Bike",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "Survey No, XJJJ+G9C, 64, Old Madras Rd, near Swami Vivekananda Ashram, Halasuru, Murphy Town, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2026-01-24 13:15:00",
+        "amount": 920,
+        "vehicle_type": "Car",
+        "provider": "Hindustan Petroleum Corporation Limited",
+        "address": "HAL Old Airport Rd, Murugeshpalya, Bengaluru, Karnataka 560017"
+    },
+    {
+        "date": "2026-02-05 11:40:00",
+        "amount": 570,
+        "vehicle_type": "Bike",
+        "provider": "IndianOil",
+        "address": "Ground Floor, Trinity Circle, Mahatma Gandhi Rd, Gowthamapuram, Jogupalya, Bengaluru, Karnataka 560008"
+    },
+    {
+        "date": "2026-02-14 16:50:00",
+        "amount": 780,
+        "vehicle_type": "Bike",
+        "provider": "Bharat Petroleum Corporation ltd",
+        "address": "No 1, Wheeler Rd, next to Thomas Bakery, Cleveland Town, Frazer Town, Bengaluru, Karnataka 560042"
+    }
+]

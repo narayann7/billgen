@@ -1,0 +1,165 @@
+{
+    "vendor_meta": {
+        "IndianOil": {
+            "gstin_prefix": "29AABCI",
+            "fuel_grade": "XtraPremium",
+            "bill_prefix": "IOC",
+            "template_id": 1,
+            "density": 0.741,
+            "footer_lines": [
+                "DRIVE SAFE, FUEL SMART",
+                "THANK YOU FOR CHOOSING INDIANOIL",
+                "VISIT US AGAIN"
+            ],
+            "stations": [
+                {
+                    "address": "HAL Old Airport Rd, Kodihalli, Bengaluru, Karnataka 560008",
+                    "name": "IndianOil - Kodihalli Service Station",
+                    "phone": "080-25222341",
+                    "gstin_suffix": "5602R1ZK",
+                    "address_parsed": {
+                        "line1": "HAL Old Airport Rd",
+                        "line2": "Kodihalli",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "pincode": "560008"
+                    }
+                },
+                {
+                    "address": "Ground Floor, Trinity Circle, Mahatma Gandhi Rd, Gowthamapuram, Jogupalya, Bengaluru, Karnataka 560008",
+                    "name": "IndianOil - Trinity Service Station",
+                    "phone": "094480 85101",
+                    "gstin_suffix": "9603R1ZM",
+                    "address_parsed": {
+                        "line1": "Ground Floor, Trinity Circle",
+                        "line2": "Mahatma Gandhi Rd, Gowthamapuram, Jogupalya",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "pincode": "560008"
+                    }
+                },
+                {
+                    "address": "C8, Old Madras Rd, Binnamangala, Stage 1, Indiranagar, Bengaluru, Karnataka 560038",
+                    "name": "IndianOil - Indiranagar Service Station",
+                    "phone": "080-25215566",
+                    "gstin_suffix": "1238R1ZP",
+                    "address_parsed": {
+                        "line1": "C8, Old Madras Rd",
+                        "line2": "Binnamangala, Stage 1, Indiranagar",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "pincode": "560038"
+                    }
+                }
+            ]
+        },
+        "Bharat Petroleum Corporation ltd": {
+            "gstin_prefix": "29AABCB",
+            "fuel_grade": "Speed 97",
+            "bill_prefix": "BPC",
+            "template_id": 3,
+            "density": 0.743,
+            "footer_lines": [
+                "PURE FOR SURE",
+                "THANKS FOR CHOOSING BHARAT PETROLEUM",
+                "COME BACK SOON"
+            ],
+            "stations": [
+                {
+                    "address": "Survey No, XJJJ+G9C, 64, Old Madras Rd, near Swami Vivekananda Ashram, Halasuru, Murphy Town, Bengaluru, Karnataka 560008",
+                    "name": "Bharat Petroleum - Halasuru Service Station",
+                    "phone": "080-25586741",
+                    "gstin_suffix": "4801R1ZQ",
+                    "address_parsed": {
+                        "line1": "64, Old Madras Rd, near Swami Vivekananda Ashram",
+                        "line2": "Halasuru, Murphy Town",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "pincode": "560008"
+                    }
+                },
+                {
+                    "address": "No 1, Wheeler Rd, next to Thomas Bakery, Cleveland Town, Frazer Town, Bengaluru, Karnataka 560042",
+                    "name": "Bharat Petroleum - Frazer Town Wheeler Rd",
+                    "phone": "080-25462819",
+                    "gstin_suffix": "6042R1ZR",
+                    "address_parsed": {
+                        "line1": "No 1, Wheeler Rd, next to Thomas Bakery",
+                        "line2": "Cleveland Town, Frazer Town",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "pincode": "560042"
+                    }
+                }
+            ]
+        },
+        "Hindustan Petroleum Corporation Limited": {
+            "gstin_prefix": "29AABCH",
+            "fuel_grade": "Power 99",
+            "bill_prefix": "HPC",
+            "template_id": 2,
+            "density": 0.742,
+            "footer_lines": [
+                "POWER UP YOUR JOURNEY",
+                "THANK YOU FOR FUELLING WITH HP",
+                "SEE YOU NEXT TIME"
+            ],
+            "stations": [
+                {
+                    "address": "HAL Old Airport Rd, Murugeshpalya, Bengaluru, Karnataka 560017",
+                    "name": "Hindustan Petroleum - Murugeshpalya Station",
+                    "phone": "080-25237892",
+                    "gstin_suffix": "5017R1ZL",
+                    "address_parsed": {
+                        "line1": "HAL Old Airport Rd",
+                        "line2": "Murugeshpalya",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "pincode": "560017"
+                    }
+                },
+                {
+                    "address": "No 162, Wheeler Rd, Sindhi Colony, Frazer Town, Bengaluru, Karnataka 560005",
+                    "name": "Hindustan Petroleum - Frazer Town Station",
+                    "phone": "080-25469023",
+                    "gstin_suffix": "6005R1ZN",
+                    "address_parsed": {
+                        "line1": "No 162, Wheeler Rd",
+                        "line2": "Sindhi Colony, Frazer Town",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "pincode": "560005"
+                    }
+                }
+            ]
+        }
+    },
+    "vehicle_numbers": {
+        "Bike": "KA-01-HJ-2345",
+        "Car": "KA-03-MJ-5678"
+    },
+    "petrol_rates": {
+        "comment": "Monthly petrol rates (INR/litre) for Bengaluru. Sources: FinancialExpress, GoodReturns, IndiaToday, BusinessToday (verified 2026-03-07)",
+        "default_before_2025": 102.92,
+        "default_from_2026": 99.84,
+        "monthly": {
+            "2025-02": 102.92,
+            "2025-03": 102.92,
+            "2025-04": 102.92,
+            "2025-05": 102.92,
+            "2025-06": 102.92,
+            "2025-07": 102.92,
+            "2025-08": 102.92,
+            "2025-09": 102.92,
+            "2025-10": 103.02,
+            "2025-11": 102.92,
+            "2025-12": 102.92,
+            "2026-01": 99.84,
+            "2026-02": 99.84
+        }
+    },
+    "output": {
+        "base_dir": "output/fuel",
+        "subdir_by_provider": false
+    }
+}

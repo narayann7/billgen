@@ -16,6 +16,7 @@ from typing import Any
 
 from src.models.base import BillType
 from src.models.fuel import FuelBillData
+from src.models.driver import DriverSalaryData
 from src.renderer import get_renderer
 
 
@@ -25,6 +26,7 @@ from src.renderer import get_renderer
 
 MODEL_REGISTRY = {
     BillType.FUEL: FuelBillData,
+    BillType.DRIVER: DriverSalaryData,
 }
 
 # Default output base directory

@@ -17,11 +17,13 @@ from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any
 
-from reportlab.lib.pagesizes import landscape
+from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.units import mm
 from reportlab.lib.colors import Color, black, white, HexColor
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT
+from reportlab.platypus import Paragraph
+from reportlab.lib.styles import ParagraphStyle
 
 from src.models.base import BillData, BillType
 
@@ -300,11 +302,152 @@ class FuelReceiptRenderer(BillRenderer):
 
 
 # ---------------------------------------------------------------------------
+# Driver salary renderer
+# ---------------------------------------------------------------------------
+
+_A4_W, _A4_H = A4   # 595.27 x 841.89 points
+_DOC_MARGIN_H = 72  # 1-inch horizontal margin
+_DOC_MARGIN_V = 60  # top/bottom margin
+_DOC_CONTENT_W = _A4_W - 2 * _DOC_MARGIN_H
+
+_FONT_REG  = "Helvetica"
+_FONT_BOLD = "Helvetica-Bold"
+_FONT_SIG  = "Times-BoldItalic"   # visually distinct font for signature
+
+
+class DriverSalaryRenderer(BillRenderer):
+    """Generates A4 driver salary receipt PDFs matching the template layout.
+
+    The document has two sections separated by a horizontal rule:
+      1. Driver Salary Receipt  — employer certifies payment
+      2. Receipt Acknowledgement — driver acknowledges receipt + Signature
+
+    The "Signature" text is rendered in Times-BoldItalic to distinguish it
+    from the Helvetica body text.
+    """
+
+    def render(self, context: dict[str, Any], output_path: Path, template_id: int = 1) -> Path:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        c = Canvas(str(output_path), pagesize=A4)
+
+        # White background
+        c.setFillColor(white)
+        c.rect(0, 0, _A4_W, _A4_H, fill=1, stroke=0)
+        c.setFillColor(black)  # reset fill to black for all text
+
+        y = _A4_H - _DOC_MARGIN_V  # start near top
+
+        amount   = context["amount"]
+        driver   = context["driver_name"]
+        month    = context["salary_month"]
+        employee = context["employee_name"]
+        date_str = context["bill_date"]
+        veh_no   = context.get("vehicle_number", "")
+
+        # ── SECTION 1: Driver Salary Receipt ──────────────────────────────
+
+        c.setFont(_FONT_BOLD, 16)
+        self._centered(c, "Driver Salary Receipt", y)
+        y -= 28
+
+        # Certification paragraph (inline bold via HTML markup)
+        cert_html = (
+            f"This is to certify that I have paid <b>Rs. {amount}</b> to driver, "
+            f"<b>{driver}</b> for the month of <b>{month}</b> "
+            "(Acknowledged receipt enclosed). I also declare that the driver is "
+            "exclusively utilized for official purpose only. Please reimburse the "
+            "above amount. I further declare that what is stated above is correct "
+            "and true."
+        )
+        y = self._draw_paragraph(c, cert_html, y, font_size=11, leading=17)
+        y -= 18
+
+        self._label_value(c, "Employee Name", employee, y)
+        y -= 20
+
+        self._label_value(c, "Date", date_str, y)
+        y -= 30
+
+        # ── Horizontal separator ──────────────────────────────────────────
+        c.setStrokeColor(black)
+        c.setLineWidth(0.8)
+        c.setDash()
+        c.line(_DOC_MARGIN_H, y, _A4_W - _DOC_MARGIN_H, y)
+        y -= 30
+
+        # ── SECTION 2: Receipt Acknowledgement ───────────────────────────
+
+        c.setFont(_FONT_BOLD, 14)
+        self._centered(c, "Receipt Acknowledgement", y)
+        y -= 28
+
+        for label, value in [
+            ("Date of Receipt", date_str),
+            ("For the Month of", month),
+            ("Name of Driver", driver),
+            ("Vehicle No", veh_no),
+        ]:
+            self._label_value(c, label, value, y)
+            y -= 20
+
+        y -= 14
+
+        recv_html = (
+            f"Received a sum of <b>Rs. {amount}</b> only for the month of "
+            f"<b>{month}</b> from <b>Mr. {employee}</b>."
+        )
+        y = self._draw_paragraph(c, recv_html, y, font_size=11, leading=17)
+        y -= 50
+
+        # ── Signature (different font) ────────────────────────────────────
+        sig_text = "Signature"
+        c.setFont(_FONT_SIG, 13)
+        sig_w = c.stringWidth(sig_text, _FONT_SIG, 13)
+        c.drawString(_A4_W - _DOC_MARGIN_H - sig_w, y, sig_text)
+
+        c.save()
+        return output_path
+
+    # -----------------------------------------------------------------------
+    # Drawing helpers
+    # -----------------------------------------------------------------------
+
+    def _centered(self, c: Canvas, text: str, y: float) -> None:
+        tw = c.stringWidth(text, c._fontname, c._fontsize)
+        c.drawString((_A4_W - tw) / 2, y, text)
+
+    def _label_value(self, c: Canvas, label: str, value: str, y: float) -> None:
+        label_text = f"{label}: "
+        c.setFont(_FONT_BOLD, 11)
+        c.drawString(_DOC_MARGIN_H, y, label_text)
+        lw = c.stringWidth(label_text, _FONT_BOLD, 11)
+        c.setFont(_FONT_REG, 11)
+        c.drawString(_DOC_MARGIN_H + lw, y, value)
+
+    def _draw_paragraph(self, c: Canvas, html: str, y_top: float,
+                        font_size: int = 11, leading: int = 17) -> float:
+        """Render a Paragraph with HTML markup; return updated y (bottom of para)."""
+        style = ParagraphStyle(
+            "drv_para",
+            fontName=_FONT_REG,
+            fontSize=font_size,
+            leading=leading,
+        )
+        para = Paragraph(html, style)
+        _, h = para.wrapOn(c, _DOC_CONTENT_W, 400)
+        y_bottom = y_top - h
+        para.drawOn(c, _DOC_MARGIN_H, y_bottom)
+        return y_bottom
+
+
+# ---------------------------------------------------------------------------
 # Renderer registry — add new bill types here
 # ---------------------------------------------------------------------------
 
 RENDERERS: dict[BillType, type[BillRenderer]] = {
     BillType.FUEL: FuelReceiptRenderer,
+    BillType.DRIVER: DriverSalaryRenderer,
 }
 
 

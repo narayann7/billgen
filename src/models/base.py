@@ -29,6 +29,7 @@ class BillType(str, Enum):
     (e.g. GROCERY = "grocery").
     """
     FUEL = "fuel"
+    DRIVER = "driver"
 
 
 class PaymentMode(str, Enum):

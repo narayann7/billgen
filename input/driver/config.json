@@ -1,0 +1,11 @@
+{
+    "employee_name": "Narayan",
+    "driver": {
+        "name": "Mr. Jhon Doe",
+        "vehicle_number": "KA05JZ1755",
+        "bill_prefix": "DRV"
+    },
+    "output": {
+        "base_dir": "output/driver"
+    }
+}

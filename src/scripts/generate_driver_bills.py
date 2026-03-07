@@ -5,6 +5,9 @@ All configuration is loaded from input/driver/config.json.
 
 Each source entry maps to one monthly DriverSalaryData payload and is
 rendered as an A4 PDF into output/driver/.
+
+Run from the project root:
+    python src/generate_driver_bills.py
 """
 
 import sys
@@ -14,14 +17,16 @@ import calendar
 from pathlib import Path
 from datetime import date
 
-sys.path.insert(0, ".")
-from src.generator import generate_bill
+# Add src/ to path so 'billgen.*' imports resolve correctly
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from billgen.generator import generate_bill
 
 # ---------------------------------------------------------------------------
 # Load config
 # ---------------------------------------------------------------------------
 
-CONFIG_PATH = Path("input/driver/config.json")
+CONFIG_PATH = Path(__file__).parent.parent.parent / "input/driver/config.json"
 
 with open(CONFIG_PATH) as _f:
     _CFG = json.load(_f)
@@ -87,7 +92,7 @@ def build_bill_data(entry: dict) -> dict:
 # ---------------------------------------------------------------------------
 
 def main():
-    source_path = Path("input/driver/source.json")
+    source_path = Path(__file__).parent.parent.parent / "input/driver/source.json"
     output_base = Path(_CFG["output"]["base_dir"])
 
     with open(source_path) as f:

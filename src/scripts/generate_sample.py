@@ -1,9 +1,16 @@
-"""Generate a fuel bill for IndianOil - Trinity Service Station."""
+"""Generate a fuel bill for IndianOil - Trinity Service Station.
+
+Run from the project root:
+    python src/generate_sample.py
+"""
 
 import sys
-sys.path.insert(0, ".")
+from pathlib import Path
 
-from src.generator import generate_bill
+# Add src/ to path so 'billgen.*' imports resolve correctly
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from billgen.generator import generate_bill
 
 # Bill data from IndianOil - Trinity Service Station, Bengaluru
 bill_data = {
@@ -50,7 +57,7 @@ print(f"✅ Bill generated: {output_path}")
 print(f"   Size: {output_path.stat().st_size:,} bytes")
 
 # Also show the model data
-from src.models.fuel import FuelBillData
+from billgen.models.fuel import FuelBillData
 bill = FuelBillData(**bill_data)
 print(f"\n📋 Bill Summary:")
 print(f"   Bill #     : {bill.bill_number}")

@@ -1,22 +1,22 @@
 # Utility Guide
 
-This guide provides information on how to use the utility scripts located in `src/util/`.
+This guide provides information on how to use the utility scripts located in `src/billgen/utils/`.
 
 ---
 
 ## Merge PDFs
 
-**File:** `src/util/merge_pdf.py`
+**File:** `src/billgen/utils/merge_pdf.py`
 
 Combines all PDF files inside a directory into a single PDF. Files are merged in alphabetical order based on their filenames (which matches chronological order when bills are prefixed with a sequence number).
 
 ### Usage
 
 ```bash
-python src/util/merge_pdf.py -i <input_directory> -o <output_pdf>
+python src/billgen/utils/merge_pdf.py -i <input_directory> -o <output_pdf>
 
 # If using uv:
-uv run python src/util/merge_pdf.py -i <input_directory> -o <output_pdf>
+uv run python src/billgen/utils/merge_pdf.py -i <input_directory> -o <output_pdf>
 ```
 
 Any missing parent directories in the output path are created automatically.
@@ -25,7 +25,7 @@ Any missing parent directories in the output path are created automatically.
 
 ```bash
 # Merge all fuel bills into a single file
-python src/util/merge_pdf.py -i output/fuel -o output/final/fuel.pdf
+python src/billgen/utils/merge_pdf.py -i output/fuel -o output/final/fuel.pdf
 ```
 
 ### Arguments
@@ -39,17 +39,17 @@ python src/util/merge_pdf.py -i output/fuel -o output/final/fuel.pdf
 
 ## Compress PDF
 
-**File:** `src/util/compress_pdf.py`
+**File:** `src/billgen/utils/compress_pdf.py`
 
 Reduces the file size of a single PDF by compressing embedded images and removing duplicate objects.
 
 ### Usage
 
 ```bash
-python src/util/compress_pdf.py <input_pdf> <output_pdf> [-l <level>]
+python src/billgen/utils/compress_pdf.py <input_pdf> <output_pdf> [-l <level>]
 
 # If using uv:
-uv run python src/util/compress_pdf.py <input_pdf> <output_pdf> [-l <level>]
+uv run python src/billgen/utils/compress_pdf.py <input_pdf> <output_pdf> [-l <level>]
 ```
 
 ### Compression Levels
@@ -64,10 +64,10 @@ uv run python src/util/compress_pdf.py <input_pdf> <output_pdf> [-l <level>]
 
 ```bash
 # Compress with default (medium) level
-python src/util/compress_pdf.py output/final/fuel.pdf output/final/fuel_compressed.pdf
+python src/billgen/utils/compress_pdf.py output/final/fuel.pdf output/final/fuel_compressed.pdf
 
 # Compress with high compression
-python src/util/compress_pdf.py output/final/fuel.pdf output/final/fuel_compressed.pdf -l high
+python src/billgen/utils/compress_pdf.py output/final/fuel.pdf output/final/fuel_compressed.pdf -l high
 ```
 
 ### Arguments
@@ -82,17 +82,17 @@ python src/util/compress_pdf.py output/final/fuel.pdf output/final/fuel_compress
 
 ## Compress Images
 
-**File:** `src/util/compress_images.py`
+**File:** `src/billgen/utils/compress_images.py`
 
 Batch-compresses PNG, JPEG, and (optionally) HEIC/HEIF images from an input directory into an output directory. The original directory structure is preserved. Requires `pillow-heif` to be installed for HEIC/HEIF support.
 
 ### Usage
 
 ```bash
-python src/util/compress_images.py <input_dir> <output_dir> [-q <quality>]
+python src/billgen/utils/compress_images.py <input_dir> <output_dir> [-q <quality>]
 
 # If using uv:
-uv run python src/util/compress_images.py <input_dir> <output_dir> [-q <quality>]
+uv run python src/billgen/utils/compress_images.py <input_dir> <output_dir> [-q <quality>]
 ```
 
 ### Supported Formats
@@ -105,10 +105,10 @@ uv run python src/util/compress_images.py <input_dir> <output_dir> [-q <quality>
 
 ```bash
 # Compress all images with default quality (85)
-python src/util/compress_images.py data/fuel/logos data/fuel/logos_compressed
+python src/billgen/utils/compress_images.py data/fuel/logos data/fuel/logos_compressed
 
 # Compress with lower quality for smaller files
-python src/util/compress_images.py data/fuel/logos data/fuel/logos_compressed -q 70
+python src/billgen/utils/compress_images.py data/fuel/logos data/fuel/logos_compressed -q 70
 ```
 
 ### Arguments
@@ -123,17 +123,17 @@ python src/util/compress_images.py data/fuel/logos data/fuel/logos_compressed -q
 
 ## Images to PDF
 
-**File:** `src/util/images_to_pdf.py`
+**File:** `src/billgen/utils/images_to_pdf.py`
 
 Converts all images in a directory to PDF. Supports two modes: merge all images into a single PDF, or produce one PDF per image. Requires `pillow-heif` for HEIC/HEIF support.
 
 ### Usage
 
 ```bash
-python src/util/images_to_pdf.py -i <input_dir> -o <output> [-m <mode>]
+python src/billgen/utils/images_to_pdf.py -i <input_dir> -o <output> [-m <mode>]
 
 # If using uv:
-uv run python src/util/images_to_pdf.py -i <input_dir> -o <output> [-m <mode>]
+uv run python src/billgen/utils/images_to_pdf.py -i <input_dir> -o <output> [-m <mode>]
 ```
 
 ### Modes
@@ -151,10 +151,10 @@ PNG, JPG/JPEG, BMP, GIF, TIFF/TIF, WEBP, HEIC/HEIF (with `pillow-heif`)
 
 ```bash
 # Merge all images in a folder into one PDF
-python src/util/images_to_pdf.py -i data/scans -o output/final/scans.pdf
+python src/billgen/utils/images_to_pdf.py -i data/scans -o output/final/scans.pdf
 
 # Convert each image to its own PDF
-python src/util/images_to_pdf.py -i data/scans -o output/scans/ -m multiple
+python src/billgen/utils/images_to_pdf.py -i data/scans -o output/scans/ -m multiple
 ```
 
 ### Arguments

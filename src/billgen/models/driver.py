@@ -12,7 +12,7 @@ from typing import Any
 
 from pydantic import Field
 
-from src.models.base import BillData, BillType
+from billgen.models.base import BillData, BillType
 
 
 class DriverSalaryData(BillData):

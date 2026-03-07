@@ -1,9 +1,16 @@
-"""Generate fuel bills with all 3 templates for verification."""
+"""Generate fuel bills with all 3 templates for verification.
+
+Run from the project root:
+    python src/generate_all_templates.py
+"""
 
 import sys
-sys.path.insert(0, ".")
+from pathlib import Path
 
-from src.generator import generate_bill
+# Add src/ to path so 'billgen.*' imports resolve correctly
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from billgen.generator import generate_bill
 
 # Same bill data, different templates
 bill_data = {

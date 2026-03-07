@@ -2,8 +2,8 @@
 Bill Generator Service — orchestrates model → renderer → PDF.
 
 Usage:
-    from src.generator import generate_bill
-    
+    from billgen import generate_bill
+
     output = generate_bill(json_data, template_id=1)
     # → Path("output/fuel/INV-2026-00142.pdf")
 """
@@ -14,10 +14,10 @@ import json
 from pathlib import Path
 from typing import Any
 
-from src.models.base import BillType
-from src.models.fuel import FuelBillData
-from src.models.driver import DriverSalaryData
-from src.renderer import get_renderer
+from billgen.models.base import BillType
+from billgen.models.fuel import FuelBillData
+from billgen.models.driver import DriverSalaryData
+from billgen.renderer import get_renderer
 
 
 # ---------------------------------------------------------------------------

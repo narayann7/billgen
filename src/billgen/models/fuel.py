@@ -12,7 +12,7 @@ from typing import Any, Optional
 
 from pydantic import Field, model_validator
 
-from src.models.base import BillData, BillType
+from billgen.models.base import BillData, BillType
 
 
 # ---------------------------------------------------------------------------

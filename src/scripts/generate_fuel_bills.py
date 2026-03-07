@@ -6,6 +6,9 @@ lookup tables live in this file.
 
 Each source entry is mapped to a complete FuelBillData payload and
 rendered as a PDF into output/fuel/<ProviderName>/.
+
+Run from the project root:
+    python src/generate_fuel_bills.py
 """
 
 import sys
@@ -14,14 +17,16 @@ import hashlib
 from pathlib import Path
 from datetime import datetime
 
-sys.path.insert(0, ".")
-from src.generator import generate_bill
+# Add src/ to path so 'billgen.*' imports resolve correctly
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from billgen.generator import generate_bill
 
 # ---------------------------------------------------------------------------
 # Load config
 # ---------------------------------------------------------------------------
 
-CONFIG_PATH = Path("input/fuel/config.json")
+CONFIG_PATH = Path(__file__).parent.parent.parent / "input/fuel/config.json"
 
 with open(CONFIG_PATH) as _f:
     _CFG = json.load(_f)
@@ -134,7 +139,7 @@ def build_bill_data(idx: int, entry: dict) -> tuple[dict, str]:
 # ---------------------------------------------------------------------------
 
 def main():
-    source_path = Path("input/fuel/source.json")
+    source_path = Path(__file__).parent.parent.parent / "input/fuel/source.json"
     output_base = Path(_CFG["output"]["base_dir"])
     subdir_by_provider: bool = _CFG["output"].get("subdir_by_provider", False)
 

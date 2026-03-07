@@ -25,7 +25,7 @@ from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT
 from reportlab.platypus import Paragraph
 from reportlab.lib.styles import ParagraphStyle
 
-from src.models.base import BillData, BillType
+from billgen.models.base import BillData, BillType
 
 
 # ---------------------------------------------------------------------------

@@ -150,7 +150,8 @@ def main():
         try:
             bill_data, provider, template_id = build_bill_data(idx, entry)
             dt = datetime.strptime(entry["date"], "%Y-%m-%d %H:%M:%S")
-            filename = f"{bill_data['bill_number']}.pdf"
+            # Prefix filename with sequence number to maintain source order sorting
+            filename = f"{idx+1:03d}_{bill_data['bill_number']}.pdf"
 
             if subdir_by_provider:
                 output_dir = output_base / provider_subdir(provider)

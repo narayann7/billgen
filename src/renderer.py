@@ -312,7 +312,6 @@ _DOC_CONTENT_W = _A4_W - 2 * _DOC_MARGIN_H
 
 _FONT_REG  = "Helvetica"
 _FONT_BOLD = "Helvetica-Bold"
-_FONT_SIG  = "Times-BoldItalic"   # visually distinct font for signature
 
 
 class DriverSalaryRenderer(BillRenderer):
@@ -321,9 +320,6 @@ class DriverSalaryRenderer(BillRenderer):
     The document has two sections separated by a horizontal rule:
       1. Driver Salary Receipt  — employer certifies payment
       2. Receipt Acknowledgement — driver acknowledges receipt + Signature
-
-    The "Signature" text is rendered in Times-BoldItalic to distinguish it
-    from the Helvetica body text.
     """
 
     def render(self, context: dict[str, Any], output_path: Path, template_id: int = 1) -> Path:
@@ -400,11 +396,27 @@ class DriverSalaryRenderer(BillRenderer):
         y = self._draw_paragraph(c, recv_html, y, font_size=11, leading=17)
         y -= 50
 
-        # ── Signature (different font) ────────────────────────────────────
+        # ── Signature ────────────────────────────────────────────────────────
         sig_text = "Signature"
-        c.setFont(_FONT_SIG, 13)
-        sig_w = c.stringWidth(sig_text, _FONT_SIG, 13)
+        c.setFont(_FONT_REG, 11)
+        sig_w = c.stringWidth(sig_text, _FONT_REG, 11)
         c.drawString(_A4_W - _DOC_MARGIN_H - sig_w, y, sig_text)
+        y -= 6
+
+        # Signature image (shifted further right than the label)
+        sig_img_path = Path("data/driver/signature.png")
+        if sig_img_path.exists():
+            sig_img_w = 140
+            sig_img_h = 50
+            c.drawImage(
+                str(sig_img_path),
+                _A4_W - 30 - sig_img_w,
+                y - sig_img_h,
+                width=sig_img_w,
+                height=sig_img_h,
+                preserveAspectRatio=True,
+                mask='auto',
+            )
 
         c.save()
         return output_path

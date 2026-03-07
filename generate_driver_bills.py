@@ -55,9 +55,8 @@ def last_day_of_month(year: int, month: int) -> date:
 def build_bill_data(entry: dict) -> dict:
     """Return bill_data dict for one source entry."""
     year, month = map(int, entry["month"].split("-"))
-    amount = entry["amount"]
-
     driver_cfg = _CFG["driver"]
+    amount = entry.get("amount", driver_cfg.get("monthly_amount", 10000))
     employee   = _CFG["employee_name"]
     month_name = _MONTH_NAMES[month]
     bill_date  = last_day_of_month(year, month)
@@ -118,7 +117,7 @@ def main():
 
             print(
                 f"  [{idx+1:02d}/{len(entries)}] {filename}"
-                f"  (Rs. {entry['amount']}  {month_name} {year})"
+                f"  (Rs. {bill_data['items'][0]['rate']}  {month_name} {year})"
             )
             ok += 1
 

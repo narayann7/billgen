@@ -1,9 +1,10 @@
 {
-    "employee_name": "Narayan",
+    "employee_name": "Narayan Reddy",
     "driver": {
-        "name": "Mr. Jhon Doe",
+        "name": "Saroj Kumar Sahu",
         "vehicle_number": "KA05JZ1755",
-        "bill_prefix": "DRV"
+        "bill_prefix": "DRV",
+        "monthly_amount": 900
     },
     "output": {
         "base_dir": "output/driver"
